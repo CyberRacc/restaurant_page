@@ -1,0 +1,28 @@
+{
+  "name": "restaurant_page",
+  "version": "1.0.0",
+  "description": "My restaurant page for the Odin Project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyberRacc/restaurant_page.git"
+  },
+  "keywords": [
+    "restaurant"
+  ],
+  "author": "CyberRacc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CyberRacc/restaurant_page/issues"
+  },
+  "homepage": "https://github.com/CyberRacc/restaurant_page#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
