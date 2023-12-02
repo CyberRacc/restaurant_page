@@ -1,8 +1,17 @@
 // Import the path module from Node.js to handle file paths
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Export the configuration object for Webpack
 module.exports = {
+  plugins: [
+    // Other plugins can be added here
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // Path to your source template
+      favicon: './src/assets/icons/fat_cat_favicon.ico'
+    }),
+  ],
+
   // Set the mode to 'development'. Other common value is 'production'.
   // Development mode optimizes the build for speed and debugging.
   mode: 'development',
@@ -22,6 +31,7 @@ module.exports = {
 
   // Module configuration for how to treat different types of modules
   module: {
+
     // Rules for different modules
     rules: [
       {
@@ -38,6 +48,10 @@ module.exports = {
 
         // This defines the type of asset module. 'asset/resource' sends a file to the output directory
         // and exports the URL. Previously achieved by using 'file-loader'.
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],
