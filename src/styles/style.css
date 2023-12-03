@@ -55,7 +55,16 @@ header {
 }
 
 #nav-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    height: 25px;
+}
 
+.page-container {
+    display: grid;
+    background-color: red;
 }
 
 footer {
