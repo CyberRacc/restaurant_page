@@ -1,0 +1,26 @@
+#content {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.page-container {
+    display: grid;
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+}
+
+#btn-view-locations {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+}
+
+#btn-view-locations:hover {
+    border: 2px solid white;
+    margin: -2px;
+}
