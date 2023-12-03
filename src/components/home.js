@@ -16,6 +16,7 @@ export const loadHomePage = () => {
 
     const btnViewLocations = document.createElement('button');
     btnViewLocations.textContent = 'View Locations';
+    btnViewLocations.id = 'btn-view-locations'
 
     content.appendChild(heading);
     content.appendChild(headingLogo);

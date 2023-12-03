@@ -1,4 +1,3 @@
-
 export const createMenu = () => {
     const content = document.getElementById('content');
 
