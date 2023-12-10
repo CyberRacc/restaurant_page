@@ -1,0 +1,22 @@
+#menu-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu-item {
+    display: grid;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    margin: 8px;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}

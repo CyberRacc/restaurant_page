@@ -6,6 +6,7 @@ import './styles/global_style.css';
 import './styles/footer.css';
 import './styles/header_nav.css';
 import './styles/page_content.css';
+import './styles/menu.css';
 
 
 document.getElementById('logo').src = logo;
