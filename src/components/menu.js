@@ -1,9 +1,17 @@
+const content = document.getElementById('content');
+
+
 export const createMenu = () => {
-    const content = document.getElementById('content');
 
+    // Create elements
     const menu = document.createElement('div');
-    menu.classList.add = 'page-container';
+    const menuGrid = document.createElement('div');
+    const menuItem = document.createElement('div');
+    const 
 
+    // Add classes/IDs
+    menuGrid.id = 'menu-grid';
+    menu.classList.add = 'page-container';
 
 
     content.appendChild(menu)
