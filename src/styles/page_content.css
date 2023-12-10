@@ -1,7 +1,5 @@
 #content {
     display: grid;
-    align-items: center;
-    align-content: center;
     justify-content: center;
 }
 

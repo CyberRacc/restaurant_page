@@ -1,20 +1,16 @@
 header {
     display: grid;
     width: 100%;
-    background-color: #837577;
     height: 100%;
+    background-color: #837577;
     justify-content: center;
     grid-template-rows: 2fr 0.5fr;
 }
 
 #nav-container {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 50%;
-    height: 25px;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 }
 
 #nav {
@@ -25,8 +21,8 @@ header {
 
 #nav-list {
     display: flex;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    align-content: center;
     justify-content: center;
     list-style-type: none;
     text-decoration: none;
