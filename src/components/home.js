@@ -5,7 +5,7 @@ export const loadHomePage = () => {
     const content = document.getElementById(`content`);
 
     const heading = document.createElement('h1');
-    heading.textContent = 'Fat Cat Restaurant'
+    heading.textContent = 'Fat Cat Cafe'
 
     const headingLogo = document.createElement('img');
     headingLogo.src = './fat_cat_logo.png';
@@ -18,10 +18,15 @@ export const loadHomePage = () => {
     btnViewLocations.textContent = 'View Locations';
     btnViewLocations.id = 'btn-view-locations'
 
+    const btnViewMenu = document.createElement('button');
+    btnViewMenu.textContent = 'View menu';
+    btnViewMenu.id = 'btn-view-locations'
+
     content.appendChild(heading);
     content.appendChild(headingLogo);
     content.appendChild(tagline);
     content.appendChild(btnViewLocations);
+    content.appendChild(btnViewMenu);
 
     console.log("Home page loaded!")
 };
