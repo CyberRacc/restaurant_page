@@ -1,4 +1,3 @@
-import { createMenu } from "./menu";
 import { loadHomePage } from "./home";
 
 const content = document.getElementById('content');
@@ -16,7 +15,7 @@ export const enableNavClicks = () => {
             if (e.id = "menu") {
                 content.innerHTML = '';
                 console.log("Loading Menu...");
-                createMenu();
+                // createMenu();
                 return;
             } else if (e.id = "bookings") {
                 console.log("Bookings not yet implemented.");
