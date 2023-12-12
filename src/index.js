@@ -1,15 +1,26 @@
-import { loadHomePage } from "./components/home";
+// Import JavaScript modules
+import Home from "./components/home";
 import { enableNavClicks } from "./components/navClicks";
 import logo from './assets/images/fat_cat_logo.png';
+
+// Import styles
 import './styles/global_style.css';
 import './styles/footer.css';
 import './styles/header_nav.css';
-import './styles/page_content.css';
+import './styles/home.css';
 import './styles/menu.css';
 
+// Set the logo image source
+const logoElement = document.getElementById('logo');
+if (logoElement) {
+    logoElement.src = logo;
+} else {
+    console.error('Logo element not found');
+}
 
-document.getElementById('logo').src = logo;
-
-
-loadHomePage();
+// Enable navigation clicks
 enableNavClicks();
+
+// Load the home page
+const homePage = new Home();
+homePage.loadHomePage();
