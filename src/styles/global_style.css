@@ -1,24 +1,34 @@
 @font-face {
-    font-family: 'Manrope', sans-serif;
-    src: url('../assets/fonts/Manrope-VariableFont_wght.ttf') format('ttf'),
-      url('../assets/fonts/Manrope-VariableFont_wght.ttf') format('ttf');
+    font-family: 'Manrope';
+    src: url('../assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
-
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
 }
 
 :root {
-    font-family: 'Manrope', sans-serif;
+    --title-color: #dbd8e3; /* Used for menu card titles */
+    --header-color: #5c5470; /* Used for header */
+    --description-color: #352f44; /* Used for menu card descriptions */
+    --dark-bg-color: #2a2438; /* Used for dark background */
+    --light-text-color: #FFFFFF; /* Used for light text on dark background */
 }
 
 body {
+    font-family: 'Manrope', sans-serif;
     padding: 0;
     margin: 0;
-    background-color: #f6e2c9;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+}
+
+#content {
+    display: grid;
+    justify-content: center;
 }
