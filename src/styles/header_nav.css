@@ -30,7 +30,7 @@ header {
 }
 
 .nav-element {
-    background-color: var(--description-color);
+    background-color: var(--accent-color-1);
     padding: 8px;
     border: none;
     border-radius: 20px;
