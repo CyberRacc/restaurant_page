@@ -28,13 +28,13 @@ export const enableNavClicks = () => {
                     content.innerHTML = '';
                     console.log("Loading Bookings...");
                     bookingsPage.createBookings();
-                    break; // Same explanation as above
+                    break;
                 case "home":
                     // Clear the content
                     content.innerHTML = '';
                     console.log("Creating Home...");
                     homePage.loadHomePage();
-                    break; // Same explanation as above
+                    break;
                 default:
                     // If button.id doesn't match any of the above cases, log "Invalid Selection"
                     console.log("Invalid Selection");
