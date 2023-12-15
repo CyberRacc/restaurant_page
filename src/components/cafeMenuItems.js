@@ -1,7 +1,8 @@
-class MenuItem {
-    constructor(title, desc, price) {
-        this.title = "Fat Cat" + title;
+export default class MenuItem {
+    constructor(title, desc, price, imgSrc) {
+        this.title = "Fat Cat" + " " + title;
         this.desc = desc;
         this.price = "£" + price;
+        this.imgSrc = imgSrc;
     }
 }
