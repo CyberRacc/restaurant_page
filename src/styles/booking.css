@@ -11,7 +11,8 @@ body {
 
 #booking-form input[type="text"],
 #booking-form input[type="email"],
-#booking-form input[type="date"] {
+#booking-form input[type="date"]
+#booking-form input[type="time"] {
     display: block;
     width: 100%;
     padding: 10px;

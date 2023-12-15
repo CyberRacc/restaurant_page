@@ -2,7 +2,7 @@ header {
     display: grid;
     width: 100%;
     height: 100%;
-    background-color: var(--header-color);
+    background-color: var(--header-colour);
     justify-content: center;
     grid-template-rows: 2fr 0.5fr;
 }
@@ -30,7 +30,7 @@ header {
 }
 
 .nav-element {
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-colour-1);
     padding: 8px;
     border: none;
     border-radius: 20px;

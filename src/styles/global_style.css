@@ -10,20 +10,20 @@
 }
 
 :root {
-    --title-color: #dbd8e3; /* Used for menu card titles - Light Purple */
-    --header-color: #5c5470; /* Used for header - Dark Purple */
-    --description-color: #352f44; /* Used for menu card descriptions - Darker Purple */
-    --dark-bg-color: #2a2438; /* Used for dark background - Almost Black Purple */
-    --light-text-color: #FFFFFF; /* Used for light text on dark background - White */
+    --title-colour: #dbd8e3; /* Used for menu card titles - Light Purple */
+    --header-colour: #5c5470; /* Used for header - Dark Purple */
+    --description-colour: #352f44; /* Used for menu card descriptions - Darker Purple */
+    --dark-bg-colour: #2a2438; /* Used for dark background - Almost Black Purple */
+    --light-text-colour: #FFFFFF; /* Used for light text on dark background - White */
     
-    /* Additional colors based on the logo and existing palette */
-    --accent-color-1: #c2b9c4; /* Lighter accent color for elements like buttons or icons */
-    --accent-color-2: #867e91; /* Medium accent color for less prominent headers or borders */
-    --call-to-action: #f4c430; /* A warm, cat-like color for call-to-action buttons or highlights */
-    --neutral-light: #f0edf6; /* A very light color for backgrounds of selected items or cards */
+    /* Additional colours based on the logo and existing palette */
+    --accent-colour-1: #c2b9c4; /* Lighter accent colour for elements like buttons or icons */
+    --accent-colour-2: #867e91; /* Medium accent colour for less prominent headers or borders */
+    --call-to-action: #f4c430; /* A warm, cat-like colour for call-to-action buttons or highlights */
+    --neutral-light: #f0edf6; /* A very light colour for backgrounds of selected items or cards */
     --neutral-dark: #201c2b; /* A darker shade for footer or subtle background variations */
-    --highlight-color-1: #a8a4b8; /* Slightly lighter purple for hovering states or underlines */
-    --highlight-color-2: #7e7491; /* Complementary color for secondary buttons or active states */
+    --highlight-colour-1: #a8a4b8; /* Slightly lighter purple for hovering states or underlines */
+    --highlight-colour-2: #7e7491; /* Complementary colour for secondary buttons or active states */
 }
 
 body {
@@ -33,8 +33,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: var(--dark-bg-color);
-    color: var(--light-text-color);
+    background-color: var(--dark-bg-colour);
+    color: var(--light-text-colour);
 }
 
 #content {
