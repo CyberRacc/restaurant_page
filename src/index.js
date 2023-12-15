@@ -25,3 +25,4 @@ enableNavClicks();
 // Load the home page
 const homePage = new Home();
 homePage.loadHomePage();
+homePage.addEventListeners();
