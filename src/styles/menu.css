@@ -2,19 +2,20 @@
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(3, 1fr);
+        background-color: var(--background-colour);
+        margin-top: 12px;
     }
 
     .menu-item {
         display: grid;
-        border: 2px solid black;
         border-radius: 12px;
         width: 300px;
         height: 400px;
         margin: 8px;
         grid-template-rows: auto 1fr auto;
         position: relative;
-        background-color: var(--header-colour);
-
+        background-color: var(--header-card-colour);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .menu-item img {
@@ -22,17 +23,17 @@
         height: auto;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
-        color: black;
     }
 
     .menu-item-desc {
         padding: 8px;
         display: grid;
         flex-direction: column;
-        color: white;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto 1fr;
-        background-color: var(--header-colour);
+        background-color: var(--header-card-colour);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
     .image-container {
@@ -44,11 +45,12 @@
     .price-display {
         padding: 4px;
         /* Set background colour to a nice green indicating item price */
-        background-color: var(--accent-colour-1);
+        background-color: var(--highlight-colour);
         text-align: center;
         border-radius: 8px;
         position: absolute;
         bottom: 8px;
         right: 8px;
         width: 80px; /* Adjust the width as needed */
+        color: white;
     }
