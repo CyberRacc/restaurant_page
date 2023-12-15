@@ -1,3 +1,6 @@
+import Menu from "./menu";
+import Locations from "./locations";
+
 export default class Home {
     
     createHomePage() {
@@ -68,8 +71,25 @@ export default class Home {
     loadHomePage() {
         // When this method is called, it calls the createHomePage method on the same instance of the class
         // 'this' refers to the instance of the class that the method is being called on
+        document.title = "Fat Cat Cafe | Home";
         this.createHomePage();
     }
 
+    // Add event listeners to menu and locations buttons
+    addEventListeners() {
+        const btnViewMenu = document.getElementById('btn-view-menu');
+        const btnViewLocations = document.getElementById('btn-view-locations');
 
+        btnViewMenu.addEventListener('click', () => {
+            const menu = new Menu();
+            menu.createMenu();
+        });
+
+        btnViewLocations.addEventListener('click', () => {
+            const locations = new Locations();
+            locations.createLocationsPage();
+            locations.initialiseLocations();
+            locations.updateLocations();
+        });
+    }
 }
