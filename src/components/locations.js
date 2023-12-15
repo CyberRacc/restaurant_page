@@ -84,6 +84,11 @@ export default class Locations {
 
             // Add classes
             locationCard.classList.add('location-card');
+            locationName.classList.add('location-name');
+            locationAddress.classList.add('location-address');
+            locationPhone.classList.add('location-phone');
+            locationEmail.classList.add('location-email');
+            locationHours.classList.add('location-hours');
 
             // Append elements
             locationsContainer.appendChild(locationCard);
@@ -94,13 +99,11 @@ export default class Locations {
             locationCard.appendChild(locationHours);
 
             // Set content
-            locationName.textContent = `Location: ${location.name}`;
+            locationName.textContent = `${location.city}, ${location.country}`;
             locationAddress.textContent = `Address: ${location.address}`;
             locationPhone.textContent = `Phone: ${location.phone}`;
             locationEmail.textContent = `Email: ${location.email}`;
             locationHours.textContent = `Hours: ${location.hours}`;
         });
     }
-
-
 }
