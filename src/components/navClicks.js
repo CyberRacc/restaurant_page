@@ -21,6 +21,7 @@ export const enableNavClicks = () => {
             // Call page update to the relevant page.
             switch (button.id) {
                 case "menu":
+                    document.title = "Fat Cat Cafe | Menu";
                     content.innerHTML = '';
 
                     menuPage.initialiseItems();
@@ -28,16 +29,19 @@ export const enableNavClicks = () => {
                     menuPage.updateMenu();
                     break;
                 case "bookings":
+                    document.title = "Fat Cat Cafe | Bookings";
                     // Clear the content
                     content.innerHTML = '';
                     console.log("Loading Bookings...");
                     bookingsPage.createBookingPage();
                     break;
                 case "home":
+                    document.title = "Fat Cat Cafe | Home";
                     // Clear the content
                     content.innerHTML = '';
                     console.log("Creating Home...");
                     homePage.loadHomePage();
+                    homePage.addEventListeners();
                     break;
                 default:
                     // If button.id doesn't match any of the above cases.
