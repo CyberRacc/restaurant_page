@@ -33,32 +33,33 @@ export default class Menu {
         console.table(this.items)
 
         // Create a menu box for each item in the items array above.
-        this.items.forEach(item => {
+        this.items.forEach(item => {        
             // Create elements
             const menuItem = document.createElement('div');
+            const imageContainer = document.createElement('div');
             const itemDescContainer = document.createElement('div');
             const image = document.createElement('img');
             const title = document.createElement('h3');
-            const desc = document.createElement('p');
             const price = document.createElement('p');
 
             // Add classes
             menuItem.classList.add('menu-item');
+            imageContainer.classList.add('image-container');
             itemDescContainer.classList.add('menu-item-desc');
+            price.classList.add('price-display');
 
             // Append elements
-            menuItem.appendChild(image);
+            menuItem.appendChild(imageContainer);
             menuItem.appendChild(itemDescContainer);
+            imageContainer.appendChild(image);
             itemDescContainer.appendChild(title);
-            itemDescContainer.appendChild(desc);
             itemDescContainer.appendChild(price);
             menu.appendChild(menuItem);
 
             // Set content
             image.src = item.imgSrc;
             title.textContent = item.title;
-            desc.textContent = item.desc;
-            price.textContent = item.price.toString();
+            price.textContent = `£${item.price.toFixed(2)}`;
         });
     }
 
@@ -71,7 +72,6 @@ export default class Menu {
 
         // Add classes & IDs
         menuGrid.id = 'menu-grid';
-
         menu.classList.add('page-container');
 
         // Append elements
