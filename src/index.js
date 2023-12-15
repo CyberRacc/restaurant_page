@@ -9,6 +9,7 @@ import './styles/footer.css';
 import './styles/header_nav.css';
 import './styles/home.css';
 import './styles/menu.css';
+import './styles/booking.css';
 
 // Set the logo image source
 const logoElement = document.getElementById('logo');
