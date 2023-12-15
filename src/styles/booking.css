@@ -1,0 +1,31 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for the booking form */
+#booking-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#booking-form input[type="text"],
+#booking-form input[type="email"],
+#booking-form input[type="date"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#booking-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#booking-form button:hover {
+    background-color: #0056b3;
+}
