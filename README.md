@@ -1,15 +1,13 @@
-# Fat Cat | Restaurant Page
+# Fat Cat Cafe | Resuarant Page Project
 
 My restaurant page project for The Odin Project.
 
 ## To-Do
 
-[x] Have each class inside of a separate module (file).
-[x] Generate cat-themed food images for the menu page.
-[x] Use JavaScript to dynamically change the page without reloading. Using only one HTML file.
-[] Finish booking page
-[] Get menu page working
-[] Make the layout of the home page nicer.
+- Make the layout of the home page nicer.
+- Improve styling of bookings page.
+- Get Booking Confirmation to work after form submission.
+- 
 
 ## What I learned during this project
 
