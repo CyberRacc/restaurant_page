@@ -10,20 +10,22 @@
 }
 
 :root {
-    --title-colour: #dbd8e3; /* Used for menu card titles - Light Purple */
-    --header-colour: #5c5470; /* Used for header - Dark Purple */
-    --description-colour: #352f44; /* Used for menu card descriptions - Darker Purple */
-    --dark-bg-colour: #2a2438; /* Used for dark background - Almost Black Purple */
-    --light-text-colour: #FFFFFF; /* Used for light text on dark background - White */
-    
-    /* Additional colours based on the logo and existing palette */
-    --accent-colour-1: #c2b9c4; /* Lighter accent colour for elements like buttons or icons */
-    --accent-colour-2: #867e91; /* Medium accent colour for less prominent headers or borders */
-    --call-to-action: #f4c430; /* A warm, cat-like colour for call-to-action buttons or highlights */
-    --neutral-light: #f0edf6; /* A very light colour for backgrounds of selected items or cards */
-    --neutral-dark: #201c2b; /* A darker shade for footer or subtle background variations */
-    --highlight-colour-1: #a8a4b8; /* Slightly lighter purple for hovering states or underlines */
-    --highlight-colour-2: #7e7491; /* Complementary colour for secondary buttons or active states */
+    /* Light Theme */
+    --background-colour: #FCF9F6;
+    --header-card-colour: #CEF1E6;
+    --button-colour: #F4A2BC;
+    --highlight-colour: #352F47;
+    --accent-colour: #C5C6CA;
+    --text-colour: #333;
+}
+
+.dark-theme {
+    --background-colour: #2B2B2B; /* or #202020 */
+    --header-card-colour: #406C7A;
+    --button-colour: #D98CA3;
+    --highlight-colour: #958EA3;
+    --accent-colour: #E0E1E6;
+    --text-colour: #E0E1E6;
 }
 
 body {
@@ -33,8 +35,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: var(--dark-bg-colour);
-    color: var(--light-text-colour);
+    background-color: var(--background-colour);
+    color: var(--text-colour);
 }
 
 #content {
