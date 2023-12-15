@@ -1,33 +1,37 @@
+// Desc: This file contains the functions that are called when the nav buttons are clicked.
+
+// Import JavaScript modules
 import Home from "./home";
-import { Bookings } from "./bookings";
+import Bookings from "./bookings";
+import Menu from "./menu";
+
 
 const content = document.getElementById('content');
 const homePage = new Home();
 const bookingsPage = new Bookings();
+const menuPage = new Menu();
 
 export const enableNavClicks = () => {
+    // Get all nav buttons
     const navButtons = document.querySelectorAll('.nav-element');
 
+    // Add event listeners to each nav button
     navButtons.forEach( (button) => {
         button.addEventListener('click', (e) => {
-            console.log(e);
             // Call page update to the relevant page.
             switch (button.id) {
                 case "menu":
-                    // Clear the content
                     content.innerHTML = '';
-                    console.log("Loading Menu...");
-                    // createMenu();
-                    // 'break' is used to exit the switch statement after a matching case is found.
-                    // 'return' is not necessary here because we're not trying to stop the execution of the entire function,
-                    // just the switch statement. If this was an 'if' statement and we wanted to stop the execution of the function
-                    // after a matching condition was found, we would use 'return'.
+
+                    menuPage.initialiseItems();
+                    menuPage.createMenu();
+                    menuPage.updateMenu();
                     break;
                 case "bookings":
                     // Clear the content
                     content.innerHTML = '';
                     console.log("Loading Bookings...");
-                    bookingsPage.createBookings();
+                    bookingsPage.createBookingPage();
                     break;
                 case "home":
                     // Clear the content
@@ -36,7 +40,7 @@ export const enableNavClicks = () => {
                     homePage.loadHomePage();
                     break;
                 default:
-                    // If button.id doesn't match any of the above cases, log "Invalid Selection"
+                    // If button.id doesn't match any of the above cases.
                     console.log("Invalid Selection");
             }
         });
