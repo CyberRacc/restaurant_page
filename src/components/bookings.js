@@ -3,68 +3,109 @@ export default class Bookings {
     content = document.getElementById('content');
 
     createBookingPage() {
+        // Create elements
         const bookingsPage = document.createElement('div');
+        const bookingsTitle = document.createElement('h1');
+        const bookTableButton = document.createElement('button');
+        const bookingFormDialog = document.createElement('dialog');
+        const bookingForm = document.createElement('form');
+        const bookingName = document.createElement('input');
+        const bookingEmail = document.createElement('input');
+        const bookingDate = document.createElement('input');
+        const bookingTime = document.createElement('input');
+        const bookingSubmit = document.createElement('input');
+        const bookingCancel = document.createElement('button');
+
+        // Set attributes
         bookingsPage.id = 'bookings-page';
         bookingsPage.classList.add('page');
-
-        const bookingsTitle = document.createElement('h1');
         bookingsTitle.id = 'bookings-title';
         bookingsTitle.textContent = 'Bookings';
-
-        bookingsPage.appendChild(bookingsTitle);
-        content.appendChild(bookingsPage);
-
-        // Create booking form
-        const bookingForm = document.createElement('form');
+        bookTableButton.id = 'book-table-button';
+        bookTableButton.textContent = 'Book a Table';
+        bookingFormDialog.id = 'booking-form-dialog';
         bookingForm.id = 'booking-form';
-        bookingsPage.appendChild(bookingForm);
-
-        // Create booking form fields
-        const bookingName = document.createElement('input');
         bookingName.id = 'booking-name';
         bookingName.type = 'text';
         bookingName.placeholder = 'Name';
         bookingName.required = true;
-        bookingForm.appendChild(bookingName);
-
-        const bookingEmail = document.createElement('input');
+        bookingName.pattern = '[\\p{L} ]+';
+        bookingName.title = "Please enter only letters and spaces.";
         bookingEmail.id = 'booking-email';
-        bookingEmail.type = 'email';    
+        bookingEmail.type = 'email';
         bookingEmail.placeholder = 'Email';
         bookingEmail.required = true;
         bookingEmail.pattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z]{2,}';
-        bookingForm.appendChild(bookingEmail);
-
-        console.log(bookingEmail.pattern) // TODO: Fix email validation
-
-        const bookingDate = document.createElement('input');
         bookingDate.id = 'booking-date';
         bookingDate.type = 'date';
         bookingDate.required = true;
-        bookingDate.min = new Date().toISOString().split('T')[0]; // Set minimum date to current date
+        bookingDate.min = new Date().toISOString().split('T')[0];
         const maxDate = new Date();
-        maxDate.setMonth(maxDate.getMonth() + 1); // Add 1 month to current date
-        bookingDate.max = maxDate.toISOString().split('T')[0]; // Set maximum date to 1 month from current date
-        bookingForm.appendChild(bookingDate);
-
-        const bookingTime = document.createElement('input');
+        maxDate.setMonth(maxDate.getMonth() + 1);
+        bookingDate.max = maxDate.toISOString().split('T')[0];
         bookingTime.id = 'booking-time';
         bookingTime.type = 'time';
         bookingTime.required = true;
-        bookingTime.min = '09:00'; // Set minimum time to 9am
-        bookingTime.max = '22:00'; // Set maximum time to 10pm
-        bookingForm.appendChild(bookingTime);
-
-        const bookingSubmit = document.createElement('input');
+        bookingTime.min = '09:00';
+        bookingTime.max = '22:00';
         bookingSubmit.id = 'booking-submit';
         bookingSubmit.type = 'submit';
         bookingSubmit.value = 'Book';
-        bookingForm.appendChild(bookingSubmit);
+        bookingCancel.id = 'booking-cancel';
 
-        // Create booking form event listener
+        // Create labels
+        const bookingNameLabel = document.createElement('label');
+        bookingNameLabel.textContent = 'Name';
+        bookingNameLabel.htmlFor = 'booking-name';
+        const bookingEmailLabel = document.createElement('label');
+        bookingEmailLabel.textContent = 'Email';
+        bookingEmailLabel.htmlFor = 'booking-email';
+        const bookingDateLabel = document.createElement('label');
+        bookingDateLabel.textContent = 'Date';
+        bookingDateLabel.htmlFor = 'booking-date';
+        const bookingTimeLabel = document.createElement('label');
+        bookingTimeLabel.textContent = 'Time';
+        bookingTimeLabel.htmlFor = 'booking-time';
+        bookingCancel.textContent = 'Cancel';
+
+        // Append elements
+        bookingsPage.appendChild(bookingsTitle);
+        bookingsPage.appendChild(bookTableButton);
+        bookingsPage.appendChild(bookingFormDialog);
+        bookingFormDialog.appendChild(bookingForm);
+        bookingForm.appendChild(bookingNameLabel);
+        bookingForm.appendChild(bookingName);
+        bookingForm.appendChild(bookingEmailLabel);
+        bookingForm.appendChild(bookingEmail);
+        bookingForm.appendChild(bookingDateLabel);
+        bookingForm.appendChild(bookingDate);
+        bookingForm.appendChild(bookingTimeLabel);
+        bookingForm.appendChild(bookingTime);
+        bookingForm.appendChild(bookingSubmit);
+        content.appendChild(bookingsPage);
+        bookingForm.appendChild(bookingCancel);
+
+        // Open booking form dialog on button click
+        bookTableButton.addEventListener('click', () => {
+            bookingFormDialog.showModal();
+        });
+
+        // Close booking form dialog on form submission
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
             this.createBooking();
+            bookingFormDialog.close();
+        });
+
+        // Close booking form dialog on cancel button click
+        bookingCancel.addEventListener('click', () => {
+            bookingFormDialog.close();
+
+            // Clear form
+            bookingName.value = '';
+            bookingEmail.value = '';
+            bookingDate.value = '';
+            bookingTime.value = '';
         });
     }
 
