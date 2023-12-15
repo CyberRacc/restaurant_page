@@ -15,9 +15,13 @@ export default class Home {
         const headingContainer = document.createElement('div');
         headingContainer.classList.add('heading-container');
 
+        // Create the logo and heading container
+        const logoHeadingContainer = document.createElement('div');
+        logoHeadingContainer.classList.add('logo-heading-container');
+
         // Create the heading logo
         const headingLogo = document.createElement('img');
-        headingLogo.src = '/src/assets/images/fat_cat_logo.png';
+        headingLogo.src = '/src/assets/images/fat_cat_logo_2_alpha.png';
         headingLogo.alt = 'logo of a large round cat with text saying fat cat';
         headingLogo.classList.add('heading-logo');
 
@@ -43,21 +47,25 @@ export default class Home {
         btnViewMenu.id = 'btn-view-menu';
         btnViewMenu.classList.add('btn-view-menu');
 
+        // Create the button container
+        const btnContainer = document.createElement('div');
+        btnContainer.id = 'btn-container';
+        btnContainer.appendChild(btnViewLocations);
+        btnContainer.appendChild(btnViewMenu);
+
+        // Append elements to the logo and heading container
+        logoHeadingContainer.appendChild(headingLogo);
+        logoHeadingContainer.appendChild(heading);
+
         // Append elements to the heading container
-        headingContainer.appendChild(headingLogo);
-        headingContainer.appendChild(heading);
+        headingContainer.appendChild(logoHeadingContainer);
+        headingContainer.appendChild(tagline);
 
         // Append elements to the content element
         content.appendChild(headingContainer);
-        content.appendChild(tagline);
         content.appendChild(btnViewLocations);
         content.appendChild(btnViewMenu);
         content.appendChild(homeContainer);
-
-        // Append elements to the heading container
-        headingContainer.appendChild(headingLogo);
-        headingContainer.appendChild(heading);
-        headingContainer.appendChild(tagline);
 
         // Append elements to the page container
         homeContainer.appendChild(headingContainer);
