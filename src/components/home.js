@@ -1,9 +1,6 @@
 export default class Home {
     
-    // This method creates the home page content
     createHomePage() {
-        console.log("Loading home page...");
-
         // Get the content element
         const content = document.getElementById(`content`);
 
@@ -68,7 +65,6 @@ export default class Home {
         console.log("Home page loaded!");
     }
 
-    // This is a method within your class
     loadHomePage() {
         // When this method is called, it calls the createHomePage method on the same instance of the class
         // 'this' refers to the instance of the class that the method is being called on
