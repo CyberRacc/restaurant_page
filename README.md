@@ -4,10 +4,9 @@ My restaurant page project for The Odin Project.
 
 ## To-Do
 
-- Make the layout of the home page nicer.
-- Improve styling of bookings page.
-- Get Booking Confirmation to work after form submission.
-- 
+- Fix booking confirmation text on booking page after form submission (CSS).
+- Fix dark theme icon not showing in top left corner
+- Toggle the theme icon between dark and unfilled and white (in light mode) and filled (in dark mode)
 
 ## What I learned during this project
 
