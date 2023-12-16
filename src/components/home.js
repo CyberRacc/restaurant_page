@@ -1,6 +1,8 @@
 import Menu from "./menu";
 import Locations from "./locations";
 
+const menu = new Menu();
+
 export default class Home {
     
     createHomePage() {
@@ -89,8 +91,12 @@ export default class Home {
         const btnViewLocations = document.getElementById('btn-view-locations');
 
         btnViewMenu.addEventListener('click', () => {
-            const menu = new Menu();
+            document.title = "Fat Cat Cafe | Menu";
+            content.innerHTML = '';
+
+            menu.initialiseItems();
             menu.createMenu();
+            menu.updateMenu();
         });
 
         btnViewLocations.addEventListener('click', () => {
