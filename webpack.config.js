@@ -8,7 +8,7 @@ module.exports = {
     // Other plugins can be added here
     new HtmlWebpackPlugin({
       template: './src/index.html', // Path to your source template
-      favicon: './src/assets/icons/fat_cat_favicon.ico'
+      favicon: './src/assets/icons/fat_cat_logo_2_favicon.ico'
     }),
   ],
 
@@ -53,6 +53,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/,
+        use: ['svg-inline-loader']
       },
     ],
   },
