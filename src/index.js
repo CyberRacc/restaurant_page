@@ -2,6 +2,7 @@
 import Home from "./components/home";
 import { enableNavClicks } from "./components/navClicks";
 import logo from './assets/images/fat_cat_logo_2_alpha.png';
+import darkThemeIcon from './assets/icons/dark_mode_moon.svg';
 
 // Import styles
 import './styles/global_style.css';
@@ -18,6 +19,13 @@ if (logoElement) {
     logoElement.src = logo;
 } else {
     console.error('Logo element not found');
+}
+
+const iconElement = document.getElementById('theme-switch');
+if (iconElement) {
+    iconElement.src = darkThemeIcon;
+} else {
+    console.error('Icon element not found');
 }
 
 document.getElementById('theme-switch').addEventListener('change', (e) => {
