@@ -35,7 +35,8 @@ export default class Bookings {
         bookingEmail.type = 'email';
         bookingEmail.placeholder = 'Email';
         bookingEmail.required = true;
-        bookingEmail.pattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z]{2,}';
+        let regexPattern = "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*\\.[a-zA-Z]{2,}";
+        bookingEmail.pattern = regexPattern;        
         bookingDate.id = 'booking-date';
         bookingDate.type = 'date';
         bookingDate.required = true;
@@ -47,7 +48,8 @@ export default class Bookings {
         bookingTime.type = 'time';
         bookingTime.required = true;
         bookingTime.min = '09:00';
-        bookingTime.max = '22:00';
+        bookingTime.max = '18:00';
+        bookingTime.step = '1800';
         bookingSubmit.id = 'booking-submit';
         bookingSubmit.type = 'submit';
         bookingSubmit.value = 'Book';
@@ -133,6 +135,9 @@ export default class Bookings {
         const bookingCard = document.createElement('div');
         bookingCard.classList.add('booking-card');
 
+        const bookingConfirmation = document.createElement('p');
+        bookingConfirmation.textContent = 'Your booking has been confirmed! See you then!';
+
         const bookingName = document.createElement('h2');
         bookingName.textContent = booking.name;
 
@@ -145,6 +150,7 @@ export default class Bookings {
         const bookingTime = document.createElement('p');
         bookingTime.textContent = booking.time;
 
+        bookingCard.appendChild(bookingConfirmation);
         bookingCard.appendChild(bookingName);
         bookingCard.appendChild(bookingEmail);
         bookingCard.appendChild(bookingDate);
