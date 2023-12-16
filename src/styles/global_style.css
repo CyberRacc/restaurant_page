@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Manrope';
     src: url('../assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
-    font-weight: 600;
+    font-weight: 900;
     font-style: normal;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .dark-theme {
-    --background-colour: #2B2B2B; /* or #202020 */
+    --background-colour: #2B2B2B;
     --header-card-colour: #406C7A;
     --button-colour: #D98CA3;
     --highlight-colour: #958EA3;
