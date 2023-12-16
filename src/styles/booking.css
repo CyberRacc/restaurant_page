@@ -6,15 +6,22 @@
 
 #booking-form-dialog {
     position: fixed;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--dialog-background-color);
+    backdrop-filter: blur(10px);
     border: none;
     border-radius: 12px;
     color: var(--text-colour);
+    /* Add the following properties for a translucent glass effect */
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+#booking-form-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the alpha value to control the dimness */
 }
 
 #booking-form-dialog label {
-    color: white;
+    color: var(--dialog-label-color);
     text-align: center;
 }
 
@@ -40,36 +47,50 @@
     border: 1px solid #ccc;
     outline: none;
     background-color: white;
-    color: #333;
 }
 
 #book-table-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--button-colour);
     border: none;
+    border-radius: 25px;
+    padding: 12px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    border-radius: 12px;
-    width: 100%;
+    font-weight: 500;
+}
+
+#book-table-button:hover {
+    background-color: var(--highlight-colour);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+#book-table-button:active {
+    background-color: var(--button-colour);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 #booking-submit {
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--button-colour);
+    color: black;
     border: none;
     cursor: pointer;
     border-radius: 12px;
     width: 100%;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 #booking-submit:hover {
-    background-color: #0056b3;
+    background-color: var(--highlight-colour);
+    color: white;
 }
 
 #booking-cancel {
     padding: 10px 20px;
-    background-color: red;
+    background-color: #300000;
     color: white;
     border: none;
     cursor: pointer;
@@ -80,4 +101,17 @@
 
 #booking-cancel:hover {
     background-color: #b30000;
+}
+
+.booking-card {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: var(--header-card-colour);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
