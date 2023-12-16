@@ -16,6 +16,7 @@
         position: relative;
         background-color: var(--header-card-colour);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
     }
 
     .menu-item img {
@@ -25,15 +26,19 @@
         border-top-right-radius: 12px;
     }
 
+
     .menu-item-desc {
-        padding: 8px;
         display: grid;
         flex-direction: column;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
         background-color: var(--header-card-colour);
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: center;
     }
 
     .image-container {
@@ -47,10 +52,10 @@
         /* Set background colour to a nice green indicating item price */
         background-color: var(--highlight-colour);
         text-align: center;
+        align-self: center;
+        justify-self: center;
         border-radius: 8px;
-        position: absolute;
-        bottom: 8px;
-        right: 8px;
         width: 80px; /* Adjust the width as needed */
         color: white;
+        margin-top: -12px;
     }
