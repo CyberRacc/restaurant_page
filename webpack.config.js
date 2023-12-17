@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         // A regex test for image files. If a file matches, the specified loader will be used.
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
 
         // This defines the type of asset module. 'asset/resource' sends a file to the output directory
         // and exports the URL. Previously achieved by using 'file-loader'.
@@ -56,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['svg-inline-loader']
+        use: ['svg-inline-loader'],
       },
     ],
   },
