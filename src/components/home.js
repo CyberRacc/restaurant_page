@@ -65,17 +65,13 @@ export default class Home {
 
         // Append elements to the content element
         content.appendChild(headingContainer);
-        content.appendChild(btnViewLocations);
-        content.appendChild(btnViewMenu);
         content.appendChild(homeContainer);
 
         // Append elements to the page container
         homeContainer.appendChild(headingContainer);
-        homeContainer.appendChild(btnViewLocations);
-        homeContainer.appendChild(btnViewMenu);
-        
+        headingContainer.appendChild(btnContainer);
 
-        console.log("Home page loaded!");
+
     }
 
     loadHomePage() {
