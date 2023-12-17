@@ -1,11 +1,12 @@
 #home-container {
-    flex-grow: 1;
     background-color: var(--background-colour);
     margin: 100px;
 }
 
 #btn-container {
     display: flex;
+    align-items: center;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -19,6 +20,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     font-weight: 500;
+    width: 200px;
+    flex: 0 0 auto; /* This means don't grow, don't shrink, and base width on content */
 }
 
 #btn-view-locations:hover,
@@ -45,7 +48,7 @@
 .heading-container {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); /* creates two columns with flexible sizes */    
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
@@ -53,6 +56,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    width: 750px;
 }
 
 .heading-logo {
