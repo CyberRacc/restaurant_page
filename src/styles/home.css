@@ -7,7 +7,10 @@
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    gap: 12px
 }
 
 #btn-view-locations,
@@ -20,8 +23,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     font-weight: 500;
-    width: 200px;
-    flex: 0 0 auto; /* This means don't grow, don't shrink, and base width on content */
+    width: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 #btn-view-locations:hover,
@@ -38,11 +42,9 @@
 }
 
 .logo-heading-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: left;
 }
 
 .heading-container {
@@ -51,30 +53,31 @@
     grid-template-columns: repeat(2, 1fr); /* creates two columns with flexible sizes */    
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
     background-color: var(--header-card-colour);
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 750px;
+    width: 2fr;
 }
 
 .heading-logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 10px; /* Added margin-bottom */
     border-radius: 50%; /* Added border-radius */
+    border: 2px solid var(--highlight-colour);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .heading {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 10px;
+    padding-left: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    width: 200px;
 }
 
 .tagline {
     font-size: 16px;
-    margin-bottom: 20px;
     grid-column-start: 1;
     grid-column-end: 3;
 }
