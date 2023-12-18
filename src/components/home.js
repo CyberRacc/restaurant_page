@@ -1,5 +1,6 @@
 import Menu from "./menu";
 import Locations from "./locations";
+import logoImage from '../assets/images/fat_cat_logo_2_alpha.png';
 
 const menu = new Menu();
 
@@ -23,8 +24,7 @@ export default class Home {
 
         // Create the heading logo
         const headingLogo = document.createElement('img');
-        headingLogo.src = '/src/assets/images/fat_cat_logo_2_alpha.png';
-        headingLogo.alt = 'logo of a large round cat with text saying fat cat';
+        headingLogo.src = logoImage;
         headingLogo.classList.add('heading-logo');
 
         // Create the heading
