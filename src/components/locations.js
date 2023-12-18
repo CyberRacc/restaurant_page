@@ -50,7 +50,7 @@ export default class Locations {
 
     createLocationsPage() {
 
-        console.log("Loading locations page...");
+        document.title = "Fat Cat Cafe | Locations";
 
         // Clear the content element
         this.content.innerHTML = '';
@@ -67,43 +67,63 @@ export default class Locations {
     }
 
     updateLocations() {
-        console.log("Updating locations...");
-
         const locationsContainer = document.getElementById('locations-container');
         locationsContainer.innerHTML = '';
 
-        // Create a location card for each location in the locations array above.
-        this.locations.forEach(location => {        
-            // Create elements
-            const locationCard = document.createElement('div');
-            const locationName = document.createElement('h2');
-            const locationAddress = document.createElement('p');
-            const locationPhone = document.createElement('p');
-            const locationEmail = document.createElement('p');
-            const locationHours = document.createElement('p');
+        // Group locations by country
+        const locationsByCountry = this.locations.reduce((groups, location) => {
+            const country = location.country;
+            if (!groups[country]) {
+                groups[country] = [];
+            }
+            groups[country].push(location);
+            return groups;
+        }, {});
 
-            // Add classes
-            locationCard.classList.add('location-card');
-            locationName.classList.add('location-name');
-            locationAddress.classList.add('location-address');
-            locationPhone.classList.add('location-phone');
-            locationEmail.classList.add('location-email');
-            locationHours.classList.add('location-hours');
+        // Create a column for each country
+        Object.keys(locationsByCountry).forEach(country => {
+            const countryDiv = document.createElement('div');
+            const countryHeader = document.createElement('h1');
 
-            // Append elements
-            locationsContainer.appendChild(locationCard);
-            locationCard.appendChild(locationName);
-            locationCard.appendChild(locationAddress);
-            locationCard.appendChild(locationPhone);
-            locationCard.appendChild(locationEmail);
-            locationCard.appendChild(locationHours);
+            countryDiv.classList.add('country-column');
 
-            // Set content
-            locationName.textContent = `${location.city}, ${location.country}`;
-            locationAddress.textContent = `Address: ${location.address}`;
-            locationPhone.textContent = `Phone: ${location.phone}`;
-            locationEmail.textContent = `Email: ${location.email}`;
-            locationHours.textContent = `Hours: ${location.hours}`;
+            countryHeader.textContent = country;
+            countryDiv.appendChild(countryHeader);
+            locationsContainer.appendChild(countryDiv);
+
+            // Create a location card for each location in the country
+            locationsByCountry[country].forEach(location => {
+                // Create elements
+                const locationCard = document.createElement('div');
+                const locationName = document.createElement('h2');
+                const locationAddress = document.createElement('p');
+                const locationPhone = document.createElement('p');
+                const locationEmail = document.createElement('p');
+                const locationHours = document.createElement('p');
+
+                // Add classes
+                locationCard.classList.add('location-card');
+                locationName.classList.add('location-name');
+                locationAddress.classList.add('location-address');
+                locationPhone.classList.add('location-phone');
+                locationEmail.classList.add('location-email');
+                locationHours.classList.add('location-hours');
+
+                // Append elements
+                countryDiv.appendChild(locationCard);
+                locationCard.appendChild(locationName);
+                locationCard.appendChild(locationAddress);
+                locationCard.appendChild(locationPhone);
+                locationCard.appendChild(locationEmail);
+                locationCard.appendChild(locationHours);
+
+                // Set content
+                locationName.textContent = `${location.city}, ${location.country}`;
+                locationAddress.textContent = `Address: ${location.address}`;
+                locationPhone.textContent = `Phone: ${location.phone}`;
+                locationEmail.textContent = `Email: ${location.email}`;
+                locationHours.textContent = `Hours: ${location.hours}`;
+            });
         });
     }
 }
