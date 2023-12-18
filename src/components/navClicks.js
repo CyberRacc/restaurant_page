@@ -4,12 +4,14 @@
 import Home from "./home";
 import Bookings from "./bookings";
 import Menu from "./menu";
+import Locations from "./locations";
 
 
 const content = document.getElementById('content');
 const homePage = new Home();
 const bookingsPage = new Bookings();
 const menuPage = new Menu();
+const locationsPage = new Locations();
 
 export const enableNavClicks = () => {
     // Get all nav buttons
@@ -42,6 +44,14 @@ export const enableNavClicks = () => {
                     console.log("Creating Home...");
                     homePage.loadHomePage();
                     homePage.addEventListeners();
+                    break;
+                case "locations":
+                    document.title = "Fat Cat Cafe | Locations";
+                    // Clear the content
+                    content.innerHTML = '';
+                    locationsPage.createLocationsPage();
+                    locationsPage.initialiseLocations();
+                    locationsPage.updateLocations();
                     break;
                 default:
                     // If button.id doesn't match any of the above cases.
