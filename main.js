@@ -311,7 +311,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./src/components/menu.js\");\n/* harmony import */ var _locations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./locations */ \"./src/components/locations.js\");\n\n\n\nconst menu = new _menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\nclass Home {\n    \n    createHomePage() {\n        // Get the content element\n        const content = document.getElementById(`content`);\n\n        // Create the page container\n        const homeContainer = document.createElement('div');\n        homeContainer.id = 'home-container';\n\n        // Create the heading container\n        const headingContainer = document.createElement('div');\n        headingContainer.classList.add('heading-container');\n\n        // Create the logo and heading container\n        const logoHeadingContainer = document.createElement('div');\n        logoHeadingContainer.classList.add('logo-heading-container');\n\n        // Create the heading logo\n        const headingLogo = document.createElement('img');\n        headingLogo.src = '/src/assets/images/fat_cat_logo_2_alpha.png';\n        headingLogo.alt = 'logo of a large round cat with text saying fat cat';\n        headingLogo.classList.add('heading-logo');\n\n        // Create the heading\n        const heading = document.createElement('h1');\n        heading.textContent = 'Fat Cat Cafe';\n        heading.classList.add('heading');\n\n        // Create the tagline\n        const tagline = document.createElement('p');\n        tagline.textContent = 'Welcome to Fat Cat Cafe! Indulge in our delicious food at any of our convenient locations.';\n        tagline.classList.add('tagline');\n\n        // Create the \"View Locations\" button\n        const btnViewLocations = document.createElement('button');\n        btnViewLocations.textContent = 'View Locations';\n        btnViewLocations.id = 'btn-view-locations';\n        btnViewLocations.classList.add('btn-view-locations');\n\n        // Create the \"View Menu\" button\n        const btnViewMenu = document.createElement('button');\n        btnViewMenu.textContent = 'View menu';\n        btnViewMenu.id = 'btn-view-menu';\n        btnViewMenu.classList.add('btn-view-menu');\n\n        // Create the button container\n        const btnContainer = document.createElement('div');\n        btnContainer.id = 'btn-container';\n        btnContainer.appendChild(btnViewLocations);\n        btnContainer.appendChild(btnViewMenu);\n\n        // Append elements to the logo and heading container\n        logoHeadingContainer.appendChild(headingLogo);\n        logoHeadingContainer.appendChild(heading);\n\n        // Append elements to the heading container\n        headingContainer.appendChild(logoHeadingContainer);\n        headingContainer.appendChild(tagline);\n\n        // Append elements to the content element\n        content.appendChild(headingContainer);\n        content.appendChild(homeContainer);\n\n        // Append elements to the page container\n        homeContainer.appendChild(headingContainer);\n        headingContainer.appendChild(btnContainer);\n\n\n    }\n\n    loadHomePage() {\n        // When this method is called, it calls the createHomePage method on the same instance of the class\n        // 'this' refers to the instance of the class that the method is being called on\n        document.title = \"Fat Cat Cafe | Home\";\n        this.createHomePage();\n    }\n\n    // Add event listeners to menu and locations buttons\n    addEventListeners() {\n        const btnViewMenu = document.getElementById('btn-view-menu');\n        const btnViewLocations = document.getElementById('btn-view-locations');\n\n        btnViewMenu.addEventListener('click', () => {\n            document.title = \"Fat Cat Cafe | Menu\";\n            content.innerHTML = '';\n\n            menu.initialiseItems();\n            menu.createMenu();\n            menu.updateMenu();\n        });\n\n        btnViewLocations.addEventListener('click', () => {\n            const locations = new _locations__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n            locations.createLocationsPage();\n            locations.initialiseLocations();\n            locations.updateLocations();\n        });\n    }\n}\n\n//# sourceURL=webpack://restaurant_page/./src/components/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./src/components/menu.js\");\n/* harmony import */ var _locations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./locations */ \"./src/components/locations.js\");\n/* harmony import */ var _assets_images_fat_cat_logo_2_alpha_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/fat_cat_logo_2_alpha.png */ \"./src/assets/images/fat_cat_logo_2_alpha.png\");\n\n\n\n\nconst menu = new _menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\nclass Home {\n    \n    createHomePage() {\n        // Get the content element\n        const content = document.getElementById(`content`);\n\n        // Create the page container\n        const homeContainer = document.createElement('div');\n        homeContainer.id = 'home-container';\n\n        // Create the heading container\n        const headingContainer = document.createElement('div');\n        headingContainer.classList.add('heading-container');\n\n        // Create the logo and heading container\n        const logoHeadingContainer = document.createElement('div');\n        logoHeadingContainer.classList.add('logo-heading-container');\n\n        // Create the heading logo\n        const headingLogo = document.createElement('img');\n        headingLogo.src = _assets_images_fat_cat_logo_2_alpha_png__WEBPACK_IMPORTED_MODULE_2__;\n        headingLogo.classList.add('heading-logo');\n\n        // Create the heading\n        const heading = document.createElement('h1');\n        heading.textContent = 'Fat Cat Cafe';\n        heading.classList.add('heading');\n\n        // Create the tagline\n        const tagline = document.createElement('p');\n        tagline.textContent = 'Welcome to Fat Cat Cafe! Indulge in our delicious food at any of our convenient locations.';\n        tagline.classList.add('tagline');\n\n        // Create the \"View Locations\" button\n        const btnViewLocations = document.createElement('button');\n        btnViewLocations.textContent = 'View Locations';\n        btnViewLocations.id = 'btn-view-locations';\n        btnViewLocations.classList.add('btn-view-locations');\n\n        // Create the \"View Menu\" button\n        const btnViewMenu = document.createElement('button');\n        btnViewMenu.textContent = 'View menu';\n        btnViewMenu.id = 'btn-view-menu';\n        btnViewMenu.classList.add('btn-view-menu');\n\n        // Create the button container\n        const btnContainer = document.createElement('div');\n        btnContainer.id = 'btn-container';\n        btnContainer.appendChild(btnViewLocations);\n        btnContainer.appendChild(btnViewMenu);\n\n        // Append elements to the logo and heading container\n        logoHeadingContainer.appendChild(headingLogo);\n        logoHeadingContainer.appendChild(heading);\n\n        // Append elements to the heading container\n        headingContainer.appendChild(logoHeadingContainer);\n        headingContainer.appendChild(tagline);\n\n        // Append elements to the content element\n        content.appendChild(headingContainer);\n        content.appendChild(homeContainer);\n\n        // Append elements to the page container\n        homeContainer.appendChild(headingContainer);\n        headingContainer.appendChild(btnContainer);\n\n\n    }\n\n    loadHomePage() {\n        // When this method is called, it calls the createHomePage method on the same instance of the class\n        // 'this' refers to the instance of the class that the method is being called on\n        document.title = \"Fat Cat Cafe | Home\";\n        this.createHomePage();\n    }\n\n    // Add event listeners to menu and locations buttons\n    addEventListeners() {\n        const btnViewMenu = document.getElementById('btn-view-menu');\n        const btnViewLocations = document.getElementById('btn-view-locations');\n\n        btnViewMenu.addEventListener('click', () => {\n            document.title = \"Fat Cat Cafe | Menu\";\n            content.innerHTML = '';\n\n            menu.initialiseItems();\n            menu.createMenu();\n            menu.updateMenu();\n        });\n\n        btnViewLocations.addEventListener('click', () => {\n            const locations = new _locations__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n            locations.createLocationsPage();\n            locations.initialiseLocations();\n            locations.updateLocations();\n        });\n    }\n}\n\n//# sourceURL=webpack://restaurant_page/./src/components/home.js?");
 
 /***/ }),
 
@@ -344,7 +344,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Menu)\n/* harmony export */ });\n/* harmony import */ var _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cafeMenuItems.js */ \"./src/components/cafeMenuItems.js\");\n\n\nclass Menu {\n    constructor() {\n        this.items = [];\n    }\n\n    content = document.getElementById('content');\n\n    addItemToArray(item) {\n        this.items.push(item);\n    }\n\n    initialiseItems() {\n        this.items = []; // Clear the items array\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Donut\", \"Donut is good!\", 6.50, '/src/assets/images/fat_cat_donut.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Ring Donut\", \"Cute ring donut\", 6.00, '/src/assets/images/fat_cat_ring_donut.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Cookie\", \"Cookie is nice!\", 4.00, '/src/assets/images/fat_cat_cookie.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Coffee\", \"Nice hot, cat coffee!\", 8.00, '/src/assets/images/fat_cat_coffee.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Cupcake\", \"Cake of cup\", 6.50, '/src/assets/images/fat_cat_cupcake.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Hot Chocolate\", \"Soothing hot chocolate with extra chocolate\", 7.50, '/src/assets/images/fat_cat_hot_chocolate.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Macaroon\", \"Lovely macaroon with cute cats!\", 4.50, '/src/assets/images/fat_cat_macaroon.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Pancakes\", \"Succulent, fresh pancakes to brighten your day!\", 11.00, '/src/assets/images/fat_cat_pancakes.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Pudding\", \"Soft, creamy custard pudding with rich double cream!\", 10.50, '/src/assets/images/fat_cat_pudding.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Burger\", \"Succulent beef-free burger with a cat bun! Comes with a drink.\", 10.00, '/src/assets/images/fat_cat_burger.png'));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Christmas Hot Chocolate\", \"Rich, creamy hot chocolate with cinnamon!\", 8.50, '/src/assets/images/fat_cat_christmas_hot_chocolate.png'));\n    }\n\n    updateMenu() {\n        console.log(\"Updating menu...\");\n        // Clear existing items\n        const menu = document.getElementById('menu-grid');\n        console.table(this.items)\n\n        // Create a menu box for each item in the items array above.\n        this.items.forEach(item => {        \n            // Create elements\n            const menuItem = document.createElement('div');\n            const imageContainer = document.createElement('div');\n            const itemDescContainer = document.createElement('div');\n            const image = document.createElement('img');\n            const title = document.createElement('h3');\n            const price = document.createElement('p');\n\n            // Add classes\n            menuItem.classList.add('menu-item');\n            imageContainer.classList.add('image-container');\n            itemDescContainer.classList.add('menu-item-desc');\n            price.classList.add('price-display');\n\n            // Append elements\n            menuItem.appendChild(imageContainer);\n            menuItem.appendChild(itemDescContainer);\n            imageContainer.appendChild(image);\n            itemDescContainer.appendChild(title);\n            itemDescContainer.appendChild(price);\n            menu.appendChild(menuItem);\n\n            // Set content\n            image.src = item.imgSrc;\n            title.textContent = item.title;\n            price.textContent = `£${item.price.toFixed(2)}`;\n        });\n    }\n\n    // Method for creating the menu container.\n    createMenu = () => {\n        console.log(\"Creating menu...\");\n        // Create elements\n        const menu = document.createElement('div');\n        const menuGrid = document.createElement('div');\n\n        // Add classes & IDs\n        menuGrid.id = 'menu-grid';\n        menu.classList.add('page-container');\n\n        // Append elements\n        content.appendChild(menu)\n        menu.appendChild(menuGrid);\n    }\n}\n\n//# sourceURL=webpack://restaurant_page/./src/components/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Menu)\n/* harmony export */ });\n/* harmony import */ var _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cafeMenuItems.js */ \"./src/components/cafeMenuItems.js\");\n/* harmony import */ var _assets_images_fat_cat_donut_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/fat_cat_donut.png */ \"./src/assets/images/fat_cat_donut.png\");\n/* harmony import */ var _assets_images_fat_cat_ring_donut_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/fat_cat_ring_donut.png */ \"./src/assets/images/fat_cat_ring_donut.png\");\n/* harmony import */ var _assets_images_fat_cat_cookie_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/fat_cat_cookie.png */ \"./src/assets/images/fat_cat_cookie.png\");\n/* harmony import */ var _assets_images_fat_cat_coffee_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/fat_cat_coffee.png */ \"./src/assets/images/fat_cat_coffee.png\");\n/* harmony import */ var _assets_images_fat_cat_cupcake_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/fat_cat_cupcake.png */ \"./src/assets/images/fat_cat_cupcake.png\");\n/* harmony import */ var _assets_images_fat_cat_hot_chocolate_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/images/fat_cat_hot_chocolate.png */ \"./src/assets/images/fat_cat_hot_chocolate.png\");\n/* harmony import */ var _assets_images_fat_cat_macaroon_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/images/fat_cat_macaroon.png */ \"./src/assets/images/fat_cat_macaroon.png\");\n/* harmony import */ var _assets_images_fat_cat_pancakes_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/images/fat_cat_pancakes.png */ \"./src/assets/images/fat_cat_pancakes.png\");\n/* harmony import */ var _assets_images_fat_cat_pudding_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/images/fat_cat_pudding.png */ \"./src/assets/images/fat_cat_pudding.png\");\n/* harmony import */ var _assets_images_fat_cat_burger_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/images/fat_cat_burger.png */ \"./src/assets/images/fat_cat_burger.png\");\n/* harmony import */ var _assets_images_fat_cat_christmas_hot_chocolate_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../assets/images/fat_cat_christmas_hot_chocolate.png */ \"./src/assets/images/fat_cat_christmas_hot_chocolate.png\");\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass Menu {\n    constructor() {\n        this.items = [];\n    }\n\n    content = document.getElementById('content');\n\n    addItemToArray(item) {\n        this.items.push(item);\n    }\n\n    initialiseItems() {\n        this.items = []; // Clear the items array\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Donut\", \"Donut is good!\", 6.50, _assets_images_fat_cat_donut_png__WEBPACK_IMPORTED_MODULE_1__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Ring Donut\", \"Cute ring donut\", 6.00, _assets_images_fat_cat_ring_donut_png__WEBPACK_IMPORTED_MODULE_2__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Cookie\", \"Cookie is nice!\", 4.00, _assets_images_fat_cat_cookie_png__WEBPACK_IMPORTED_MODULE_3__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Coffee\", \"Nice hot, cat coffee!\", 8.00, _assets_images_fat_cat_coffee_png__WEBPACK_IMPORTED_MODULE_4__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Cupcake\", \"Cake of cup\", 6.50, _assets_images_fat_cat_cupcake_png__WEBPACK_IMPORTED_MODULE_5__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Hot Chocolate\", \"Soothing hot chocolate with extra chocolate\", 7.50, _assets_images_fat_cat_hot_chocolate_png__WEBPACK_IMPORTED_MODULE_6__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Macaroon\", \"Lovely macaroon with cute cats!\", 4.50, _assets_images_fat_cat_macaroon_png__WEBPACK_IMPORTED_MODULE_7__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Pancakes\", \"Succulent, fresh pancakes to brighten your day!\", 11.00, _assets_images_fat_cat_pancakes_png__WEBPACK_IMPORTED_MODULE_8__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Pudding\", \"Soft, creamy custard pudding with rich double cream!\", 10.50, _assets_images_fat_cat_pudding_png__WEBPACK_IMPORTED_MODULE_9__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Burger\", \"Succulent beef-free burger with a cat bun! Comes with a drink.\", 10.00, _assets_images_fat_cat_burger_png__WEBPACK_IMPORTED_MODULE_10__));\n        this.addItemToArray(new _cafeMenuItems_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"Christmas Hot Chocolate\", \"Rich, creamy hot chocolate with cinnamon!\", 8.50, _assets_images_fat_cat_christmas_hot_chocolate_png__WEBPACK_IMPORTED_MODULE_11__));\n    }\n\n    updateMenu() {\n        console.log(\"Updating menu...\");\n        // Clear existing items\n        const menu = document.getElementById('menu-grid');\n        console.table(this.items)\n\n        // Create a menu box for each item in the items array above.\n        this.items.forEach(item => {        \n            // Create elements\n            const menuItem = document.createElement('div');\n            const imageContainer = document.createElement('div');\n            const itemDescContainer = document.createElement('div');\n            const image = document.createElement('img');\n            const title = document.createElement('h3');\n            const price = document.createElement('p');\n\n            // Add classes\n            menuItem.classList.add('menu-item');\n            imageContainer.classList.add('image-container');\n            itemDescContainer.classList.add('menu-item-desc');\n            price.classList.add('price-display');\n\n            // Append elements\n            menuItem.appendChild(imageContainer);\n            menuItem.appendChild(itemDescContainer);\n            imageContainer.appendChild(image);\n            itemDescContainer.appendChild(title);\n            itemDescContainer.appendChild(price);\n            menu.appendChild(menuItem);\n\n            // Set content\n            image.src = item.imgSrc;\n            title.textContent = item.title;\n            price.textContent = `£${item.price.toFixed(2)}`;\n        });\n    }\n\n    // Method for creating the menu container.\n    createMenu = () => {\n        console.log(\"Creating menu...\");\n        // Create elements\n        const menu = document.createElement('div');\n        const menuGrid = document.createElement('div');\n\n        // Add classes & IDs\n        menuGrid.id = 'menu-grid';\n        menu.classList.add('page-container');\n\n        // Append elements\n        content.appendChild(menu)\n        menu.appendChild(menuGrid);\n    }\n}\n\n//# sourceURL=webpack://restaurant_page/./src/components/menu.js?");
 
 /***/ }),
 
@@ -381,6 +381,83 @@ eval("module.exports = __webpack_require__.p + \"4afb283bba326df875f6.ttf\";\n\n
 
 /***/ }),
 
+/***/ "./src/assets/images/fat_cat_burger.png":
+/*!**********************************************!*\
+  !*** ./src/assets/images/fat_cat_burger.png ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"b42573948719fb33d318.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_burger.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_christmas_hot_chocolate.png":
+/*!***************************************************************!*\
+  !*** ./src/assets/images/fat_cat_christmas_hot_chocolate.png ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"cf8db214ad8c3ab058ee.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_christmas_hot_chocolate.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_coffee.png":
+/*!**********************************************!*\
+  !*** ./src/assets/images/fat_cat_coffee.png ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"0a4594f6e8f3b62b798e.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_coffee.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_cookie.png":
+/*!**********************************************!*\
+  !*** ./src/assets/images/fat_cat_cookie.png ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"449f407abc3e2ec4084c.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_cookie.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_cupcake.png":
+/*!***********************************************!*\
+  !*** ./src/assets/images/fat_cat_cupcake.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"2fea452bc51faf12ba9f.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_cupcake.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_donut.png":
+/*!*********************************************!*\
+  !*** ./src/assets/images/fat_cat_donut.png ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"e2998c74ee9f95a0d9dd.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_donut.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_hot_chocolate.png":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/fat_cat_hot_chocolate.png ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"edaff06cf8ff5dc8112f.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_hot_chocolate.png?");
+
+/***/ }),
+
 /***/ "./src/assets/images/fat_cat_logo_2_alpha.png":
 /*!****************************************************!*\
   !*** ./src/assets/images/fat_cat_logo_2_alpha.png ***!
@@ -389,6 +466,50 @@ eval("module.exports = __webpack_require__.p + \"4afb283bba326df875f6.ttf\";\n\n
 
 "use strict";
 eval("module.exports = __webpack_require__.p + \"2b7334ca1f3ed69aefc5.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_logo_2_alpha.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_macaroon.png":
+/*!************************************************!*\
+  !*** ./src/assets/images/fat_cat_macaroon.png ***!
+  \************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"6103b8732dd1e2265408.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_macaroon.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_pancakes.png":
+/*!************************************************!*\
+  !*** ./src/assets/images/fat_cat_pancakes.png ***!
+  \************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"7969d3e24072544031d3.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_pancakes.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_pudding.png":
+/*!***********************************************!*\
+  !*** ./src/assets/images/fat_cat_pudding.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"8935a7dc72550c0611ad.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_pudding.png?");
+
+/***/ }),
+
+/***/ "./src/assets/images/fat_cat_ring_donut.png":
+/*!**************************************************!*\
+  !*** ./src/assets/images/fat_cat_ring_donut.png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"63754003952d0be02598.png\";\n\n//# sourceURL=webpack://restaurant_page/./src/assets/images/fat_cat_ring_donut.png?");
 
 /***/ })
 
